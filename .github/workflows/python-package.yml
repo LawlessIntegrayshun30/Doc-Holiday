@@ -4,7 +4,7 @@ name: Python application
 on: [push, pull_request]
 
 jobs:
-  build:
+    build:
     runs-on: ubuntu-22.04   # Update to a runner image supporting Node20
     
     strategy:

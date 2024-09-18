@@ -1,0 +1,30 @@
+
+classDiagram
+    class Main {
+        -VoiceInterface voice_interface
+        -FileManager file_manager
+        -LearningModel learning_model
+        -UI ui
+        +run() void
+    }
+    class VoiceInterface {
+        +listen() str
+        +speak(response: str) void
+    }
+    class FileManager {
+        +list_files(directory: str) list
+        +manage_file(action: str, file_path: str) void
+    }
+    class LearningModel {
+        -TensorFlow model
+        +train(data: list) void
+        +predict(input: str) str
+    }
+    class UI {
+        +start_ui() void
+    }
+    Main --> VoiceInterface
+    Main --> FileManager
+    Main --> LearningModel
+    Main --> UI
+    LearningModel --> TensorFlow

@@ -1,0 +1,20 @@
+
+sequenceDiagram
+    participant M as Main
+    participant VI as VoiceInterface
+    participant FM as FileManager
+    participant LM as LearningModel
+    participant U as UI
+    M->>U: start_ui()
+    loop Voice Interaction
+        U->>VI: listen()
+        VI-->>U: return command
+        U->>LM: predict(command)
+        LM-->>U: return action
+        alt File Management
+            U->>FM: manage_file(action, file_path)
+            FM-->>U: return result
+        else Speak Response
+            U->>VI: speak(response)
+        end
+    end

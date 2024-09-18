@@ -3,7 +3,7 @@ name: Python application
 
 on: [push, pull_request]
 
-jobs:
+  jobs:
     build:
     runs-on: ubuntu-22.04   # Update to a runner image supporting Node20
     
